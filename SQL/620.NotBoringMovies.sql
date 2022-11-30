@@ -38,3 +38,11 @@ FROM
 WHERE 
 	id % 2 = 1 AND description <> 'boring'
 	order by rating desc
+
+-- mod(n, m) n을 m으로 나눈 나머지 를 반환하는 함수를 활용한 풀이
+select
+    *
+from 
+    cinema
+    where mod(id, 2) = 1 and description != 'boring'
+    order by rating DESC;
