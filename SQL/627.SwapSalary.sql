@@ -42,3 +42,18 @@ insert into Salary (id, name, sex, salary) values ('4', 'D', 'f', '500')
 -- Explanation: 
 -- (1, A) and (3, C) were changed from 'm' to 'f'.
 -- (2, B) and (4, D) were changed from 'f' to 'm'.
+-- Write ans SQL query to swap all 'f' and 'm' values(i.e., chane all 'f' values to 'm' and vice versa)
+-- with a single update statement and no intermediate temporary tables.
+-- Note that you must write a single update statement, do not write any select statement for this problem.
+-- The query result format is in the following example
+
+-- query 문 쓰지 말고 'f' -> 'm' 으로 'm' -> 'f'로 update statement 해라
+UPDATE Salary 
+SET
+`SEX` = CASE SEX 
+            WHEN 'F'
+            THEN 'M'
+            WHEN 'M'
+            THEN 'F'
+        END;
+ 
