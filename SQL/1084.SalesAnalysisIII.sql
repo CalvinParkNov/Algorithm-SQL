@@ -61,3 +61,22 @@ insert into Sales (seller_id, product_id, buyer_id, sale_date, quantity, price) 
 -- but was also sold after the spring of 2019.
 -- The product with id 3 was sold after sprin 2019.
 -- We return only product 1 as it is the product that was only sold in hte spring of 2019.
+
+select 
+    p.product_id, 
+    product_name
+from 
+    product p
+inner join
+    (
+        select
+            product_id, 
+            min(sale_date) mind,
+            max(sale_date) maxd
+        from 
+            sales
+            group by product_id
+            having mind>='2019-01-01' and mind <= '2019-03-31'
+            and maxd>='2019-01-01' and maxd<= '2019-03-31'
+    ) t
+    using (product_id)
