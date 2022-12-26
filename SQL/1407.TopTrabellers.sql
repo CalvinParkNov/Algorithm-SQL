@@ -77,3 +77,11 @@ FROM
     ON U.ID = R.USER_ID
     GROUP BY U.ID
     ORDER BY 2 DESC, 1 ASC
+
+-- solution
+-- if you look at the distance table Donald does not have any distance record. We need to use left join instead of inner join to get Donald on the result. After using left join, Donald distance is null. Therefore, we need to use if statement.
+-- if(something, true value, else value) as Something
+-- if Distance is null then 0 else SUM(R.Distance).
+-- then instead of grouping by name we need to group by the user id becuase preventing from the user's having same name.
+-- order by TRAVELLED_DISTANCE DESC, U.NAME ASC === order by 2 DESC, 1 
+-- Do not need to put ASC, it is default order value. 
