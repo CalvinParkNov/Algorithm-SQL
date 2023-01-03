@@ -5,6 +5,8 @@
 //  consisting of non-space characters only.
 
 
+// Runtime 104 ms
+// Memeory 41.9 MB 
 let lengthOfLastWord = function(s) {
     let words = s.split (" ");
     let wordLength;
@@ -18,3 +20,13 @@ let lengthOfLastWord = function(s) {
 };
 
 console.log(lengthOfLastWord("   fly me   to   the moon  "));
+
+
+// Runtime 92 ms
+// Memory 41.7 MB
+let lengthOfLastWord1 = function (s){
+    s = s.trim().split(" ");
+    return s[s.length-1].length;
+}
+
+console.log(lengthOfLastWord1("   fly me   to   the moon  "));
