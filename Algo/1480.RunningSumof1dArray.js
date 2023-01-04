@@ -17,3 +17,16 @@
 
 // Input: nums = [3,1,2,10,1]
 // Output: [3,4,6,16,17]
+
+const nums = [1,2,3,4]
+const nums2 = [1,1,1,1,1]
+const nums3 = [3,1,2,10,1]
+
+function runningSum(numbers){
+
+    const answer = [numbers[0]];
+    for(let i=1; i<numbers.length;i++){
+        answer.push(numbers[i] + answer[i-1]);
+    }
+    return answer;
+}
