@@ -29,3 +29,34 @@
 // Left sum = 0 (no elements to the left of index 0)
 // Right sum = nums[1] + nums[2] = 1 + -1 = 0
 
+
+// Solve the question in REACTO method.
+
+// Repeat the question untill clearly understand the question.
+
+// Example the question, pivot index starts from 0. If left sum and right sum are the same return the index.
+// then we have to sum up all the arrays for the first time
+
+let pivotIndex = function(nums){
+    // we can use two different method to sum up the arrays
+    // 1. using for loops
+    // 2. using reduce method
+    const initialValue = 0;
+    let pivot = 0
+    let totlaValue = nums.reduct((a,b) => a + b, initialValue);
+    let leftSum = 0;
+    let rightSum = 0;
+    //then finds out what is the pivot index via for loops.
+    for(pivot; pivot<anums.length;pivot++){
+        rightSum = totlaValue - leftSum - nums[pivot]
+        // if left sum and right sum is equal then return the pivot index
+        if(leftSum === rightSum){
+            return pivot;
+        } 
+        //if they are not equal move pivot to right side then sum up the left and right.
+        leftSum += nums[pivot];
+    }
+    //if nothing then return -1;
+    return -1;
+    
+}
