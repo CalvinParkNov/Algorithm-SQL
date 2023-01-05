@@ -43,7 +43,7 @@ let pivotIndex = function(nums){
     // 2. using reduce method
     const initialValue = 0;
     let pivot = 0
-    let totlaValue = nums.reduct((a,b) => a + b, initialValue);
+    let totlaValue = nums.reduce((a,b) => a + b, initialValue);
     let leftSum = 0;
     let rightSum = 0;
     //then finds out what is the pivot index via for loops.
