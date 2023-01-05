@@ -58,5 +58,4 @@ let pivotIndex = function(nums){
     }
     //if nothing then return -1;
     return -1;
-    
 }
