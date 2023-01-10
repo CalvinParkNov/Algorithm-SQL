@@ -32,3 +32,7 @@ let isIsomophic = function (s,t){
     }
     return true;
 }
+let word = "title";
+let word2 = "paper";
+
+console.log(isIsomophic(word,word2));
