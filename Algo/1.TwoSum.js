@@ -3,3 +3,20 @@
 // You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
 // You can return the answer in any order.
+
+let twoSum = function (nums, tartget){
+    const answer = [];
+    for(let i = 0; i <= nums.length; i++){
+        for(let j = i+1; j <= nums.length; j++){
+            if(nums[i] + nums[j] === target){
+                answer.push(i,j);
+                return answer;
+            }
+        }
+    }
+}
+
+let number = [2,7,11,15]
+let target = 13
+
+console.log(twoSum(number, target))
